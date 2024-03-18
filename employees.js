@@ -37,5 +37,17 @@ for(let day =0; day <  no_of_working_days; day++){
     emp_check = Math.floor(Math.random()*10) %3;
     empHrs = getWorkingHours(emp_check);
 }
-empWages = empHrs * wages_per_hour;
-console.log("Total hours: "+empHrs+ " Emp wages: "+empWages);
+// empWages = empHrs * wages_per_hour;
+// console.log("Total hours: "+empHrs+ " Emp wages: "+empWages);
+
+const max_working_hours = 160;
+const max_working_days = 20;
+let total_hrs = 0;
+let total_days = 0;
+while( total_days <= max_working_days && total_hrs <= max_working_hours){
+    total_days++;
+    let emp_check = Math.floor(Math.random()*10) % 3;
+    total_hrs += getWorkingHours(emp_check);
+}
+let empWages = total_hrs * wages_per_hour;
+console.log("Total days: "+total_days+" total hours: "+total_hrs);
